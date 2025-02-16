@@ -2,22 +2,18 @@ package main
 
 import (
 	"log"
-	"os"
-
 	"city_barber.com/configs"
 	"city_barber.com/internal/database"
 	"city_barber.com/internal/routes"
 	"github.com/gin-gonic/gin"
-
-	"github.com/joho/go.env"
 )
 
 func main() {
-	// Load environment variables or configurations
-	configs.LoadConfig()
+	// Load configuration
+	config := configs.LoadConfig()
 
-	// Initialize the database connection
-	if err := database.InitDB(); err != nil {
+	// Initialize the database
+	if err := database.InitDB(config.DBUser, config.DBPassword, config.DBHost, config.DBPort, config.DBName); err != nil {
 		log.Fatalf("Failed to initialize database: %v", err)
 	}
 
@@ -28,9 +24,9 @@ func main() {
 	routes.SetupRoutes(router)
 
 	// Start the server
-	port := os.Getenv("PORT")
+	port := config.Port
 	if port == "" {
-		port = "8080" // Default port if not specified
+		port = "8080" // Default port
 	}
 
 	log.Printf("Server is running on port %s", port)
