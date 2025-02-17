@@ -2,6 +2,7 @@
 
 City Barber is a web application for managing barber shops, bookings, and user accounts. It includes features like user authentication, Google OAuth login, password reset via SMS/email, and more.
 
+  
 ## Features
 
 - User registration and login
