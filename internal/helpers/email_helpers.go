@@ -3,9 +3,11 @@ package helpers
 import (
 	"fmt"
 	"net/smtp"
+
+	"github.com/abik1221/city_barber.com/internal/configs"
 )
 
-// SendEmail sends an email using SMTP
+
 func SendEmail(to, subject, body string) error {
 	config := configs.LoadConfig()
 

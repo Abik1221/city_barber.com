@@ -1,12 +1,12 @@
 package routes
 
 import (
-	"city_barber.com/internal/controllers"
-	"city_barber.com/internal/middleware"
+	"github.com/abik1221/city_barber.com/internal/controllers"
+	"github.com/abik1221/city_barber.com/internal/middleware"
 	"github.com/gin-gonic/gin"
 )
 
-func SetupRoutes(router *gin.Engine) {
+func SetupRoutes(incomig_routes *gin.Engine) {
 	authController := controllers.NewAuthController(services.NewAuthService(database.DB))
 	googleAuthController := controllers.NewGoogleAuthController(services.NewGoogleAuthService(database.DB))
 

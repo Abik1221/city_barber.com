@@ -5,8 +5,8 @@ import (
 	"strings"
 
 	"github.com/gin-gonic/gin"
-	"city_barber.com/internal/helpers"
-	"city_barber.com/configs"
+	"github.com/abik1221/city_barber.com/internal/helpers"
+	"github.com/abik1221/city_barber.com/configs"
 )
 
 // AuthMiddleware validates the JWT token and sets the user ID in the context

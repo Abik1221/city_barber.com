@@ -6,7 +6,6 @@ import (
 	"strings"
 )
 
-// GenerateRandomString generates a random string of a given length
 func GenerateRandomString(length int) string {
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	seededRand := rand.New(rand.NewSource(time.Now().UnixNano()))

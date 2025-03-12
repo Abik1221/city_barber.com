@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"net/http"
-	"city_barber.com/internal/services"
+	"github.com/abik1221/city_barber.com/internal/services"
 	"github.com/gin-gonic/gin"
 )
 

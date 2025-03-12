@@ -4,20 +4,19 @@ import (
 	"fmt"
 	"log"
 
-	"city_barber.com/configs"
-	"city_barber.com/internal/models"
+	"github.com/abik1221/city_barber.com/configs"
+	"github.com/abik1221/city_barber.com/internal/models"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
 
 var DB *gorm.DB
 
-// InitDB initializes the database connection and performs auto-migration
-func InitDB(dbUser, dbPassword, dbHost, dbPort, dbName string) error {
-	// Create the DSN (Data Source Name)
-	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbUser, dbPassword, dbHost, dbPort, dbName)
 
-	// Open a connection to the database
+func InitDB(dbUser, dbPassword, dbHost, dbPort, dbName string) error {
+
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local", dbUser, dbPassword, dbHost, dbPort, dbName)
+	
 	var err error
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{})
 	if err != nil {
