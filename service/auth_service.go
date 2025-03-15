@@ -2,7 +2,6 @@ package services
 
 import (
 	"errors"
-
 	"github.com/abik1221/city_barber.com/internal/helpers"
 	"github.com/abik1221/city_barber.com/internal/models"
 	"gorm.io/gorm"
@@ -22,7 +21,7 @@ func (as *AuthService) Login(email, password string) (string, error) {
 		return "", errors.New("invalid email or password")
 	}
 
-	if err := helpers.ComparePassword(user.PasswordHash, password); err != nil {
+	if err := helpers.ComparePassword (user.PasswordHash, password); err != nil {
 		return "", errors.New("invalid email or password")
 	}
 

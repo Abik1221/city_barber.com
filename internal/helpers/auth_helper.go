@@ -1,0 +1,4 @@
+package helpers
+
+
+func GenerateAllTokens

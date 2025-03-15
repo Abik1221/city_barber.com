@@ -27,3 +27,15 @@ func SendEmail(to, subject, body string) error {
 
 	return nil
 }
+
+func SendSMS(phone, body string) error {
+	// code to send SMS
+	return nil
+}
+
+func GenerateTempPassword() string {
+	// code to generate temporary password
+	return "temp_password"
+}
+
+
